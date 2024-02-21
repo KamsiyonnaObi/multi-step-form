@@ -50,10 +50,46 @@ h6 {
   color: var(--cool-gray);
 }
 
+.form-container {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
 .mobile-footer {
   background-color: var(--white);
   margin-top: auto;
   padding: 16px;
   display: flex;
   justify-content: space-between;
+}
+
+.stage-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.5px;
+}
+
+.stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  margin: 8px;
+  padding: 8px;
+  width: 16px;
+}
+
+.selected-stage {
+  border: none;
+  color: var(--marine-blue);
+  background-color: var(--pastel-blue);
 }

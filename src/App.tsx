@@ -1,6 +1,7 @@
 import React from "react";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import Stage from "./components/stages/Stage";
 
 const App = () => {
   return (
@@ -8,14 +9,17 @@ const App = () => {
       <div>
         <img src="../assets/images/bg-sidebar-mobile.svg" alt="header-image" />
       </div>
-      <Paper elevation={2} sx={{ margin: "0 24px" }}>
-        <section className="step-container">
-          <h1>Personal info</h1>
-          <p className="grey-text">
-            Please provide your name, email address, and phone number.
-          </p>
-        </section>
-      </Paper>
+      <section className="form-container">
+        <Stage />
+        <Paper elevation={2} sx={{ margin: "0 24px" }}>
+          <section className="step-container">
+            <h1>Personal info</h1>
+            <p className="grey-text">
+              Please provide your name, email address, and phone number.
+            </p>
+          </section>
+        </Paper>
+      </section>
       {/* Mobile Footer */}
       <div className="mobile-footer">
         <Button
