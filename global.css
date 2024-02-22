@@ -123,5 +123,5 @@ label {
 .selected-stage {
   border: none;
   color: var(--marine-blue);
-  background-color: var(--pastel-blue);
+  background-color: var(--light-blue);
 }
