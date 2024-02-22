@@ -13,7 +13,7 @@ const App = () => {
       </div>
       <section className="form-container">
         <Stage />
-        <Paper sx={{ margin: "0 24px", borderRadius: "8px" }}>
+        <Paper sx={{ margin: "0 20px", borderRadius: "8px" }}>
           <section className="step-container">
             {/* <PersonalInfo /> */}
             <SelectPlan />

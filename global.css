@@ -125,3 +125,34 @@ label {
   color: var(--marine-blue);
   background-color: var(--light-blue);
 }
+
+.plan-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.plan-button {
+  padding: 16px;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+}
+
+.zero-margin {
+  font-family: "Ubuntu";
+  margin: 0;
+  text-align: left;
+}
+
+.price-text {
+  color: var(--cool-gray);
+  font-family: "Ubuntu", sans-serif;
+  text-align: left;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
