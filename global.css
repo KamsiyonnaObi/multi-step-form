@@ -41,8 +41,39 @@ h6 {
   color: var(--marine-blue);
 }
 
+h1 {
+  font-size: 24px;
+  margin: 12px 0px;
+}
+
+p {
+  margin-top: 0;
+  line-height: 24px;
+}
+
+input {
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  margin-bottom: 16px;
+  width: 100%;
+  padding: 12px 16px;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cool-gray);
+}
+
+label {
+  color: var(--marine-blue);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
 .step-container {
-  padding: 20px;
+  padding: 16px 24px;
 }
 
 .grey-text {
@@ -57,7 +88,7 @@ h6 {
   margin-top: 24px;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 24px;
 }
 
 .mobile-footer {
@@ -86,6 +117,7 @@ h6 {
   margin: 8px;
   padding: 8px;
   width: 16px;
+  height: 16px;
 }
 
 .selected-stage {
