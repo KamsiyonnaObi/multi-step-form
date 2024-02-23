@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Button, styled } from "@mui/material";
+import Switch from "@mui/material/Switch";
 
 import { formatPrice } from "../../../utils/utils";
 
 export const SelectPlan = () => {
   const [selectedButton, setSelectedButton] = useState(1);
-
+  const [isYearly, setIsYearly] = useState(false);
   const handleButtonClick = (buttonId: number) => {
     setSelectedButton(buttonId);
   };
 
+  const onSwitchChange = () => {
+    setIsYearly((prev) => !prev);
+  };
   // Data for each plan
   const plans = [
     {
@@ -61,19 +65,41 @@ export const SelectPlan = () => {
             }}
             onClick={() => handleButtonClick(plan.id)}
           >
-            <div style={{ display: "flex", gap: "12px" }}>
+            <div
+              style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}
+            >
               <img src={plan.image} alt={plan.name} />
               <div className="flex-col-center">
                 <h3 className="zero-margin">{plan.name}</h3>
                 <p className="zero-margin price-text">
-                  {formatPrice(plan.price)}
+                  {formatPrice(plan.price, isYearly)}
                 </p>
+                {isYearly && (
+                  <p className="zero-margin price-text selected-switch">
+                    2 months free
+                  </p>
+                )}
               </div>
             </div>
           </PlanButton>
         ))}
       </div>
-      <div>Monthly or Yearly</div>
+      <section className="flex-center switch-container">
+        <p
+          className={`zero-margin switch-text ${
+            !isYearly && "selected-switch"
+          }`}
+        >
+          Monthly
+        </p>
+        <Switch color="default" onChange={onSwitchChange} />
+        <p
+          className={`zero-margin switch-text ${isYearly && "selected-switch"}`}
+        >
+          {" "}
+          Yearly
+        </p>
+      </section>
     </>
   );
 };

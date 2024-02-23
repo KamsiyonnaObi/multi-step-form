@@ -151,8 +151,34 @@ label {
   text-align: left;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .flex-col-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.switch-container {
+  gap: 8px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  padding: 6px;
+  border-radius: 12px;
+  width: 100%;
+  background-color: var(--alabaster);
+}
+
+.switch-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cool-gray);
+}
+
+.selected-switch {
+  color: var(--marine-blue) !important;
 }
