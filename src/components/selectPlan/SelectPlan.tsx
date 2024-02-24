@@ -4,6 +4,19 @@ import Switch from "@mui/material/Switch";
 
 import { formatPrice } from "../../../utils/utils";
 
+// create reusable button
+export const PlanButton = styled(Button)(() => ({
+  border: "1px solid var(--light-gray)",
+  backgroundColor: "transparent",
+  justifyContent: "flex-start",
+  padding: "12px 16px",
+  borderRadius: "8px",
+  "&:hover": {
+    borderColor: "var(--purplish-blue)",
+    backgroundColor: "transparent",
+  },
+}));
+
 export const SelectPlan = () => {
   const [selectedButton, setSelectedButton] = useState(1);
   const [isYearly, setIsYearly] = useState(false);
@@ -35,18 +48,7 @@ export const SelectPlan = () => {
       image: "../../../assets/images/icon-pro.svg",
     },
   ];
-  // create reusable button
-  const PlanButton = styled(Button)(() => ({
-    border: "1px solid var(--light-gray)",
-    backgroundColor: "transparent",
-    justifyContent: "flex-start",
-    padding: "12px 16px",
-    borderRadius: "8px",
-    "&:hover": {
-      borderColor: "var(--purplish-blue)",
-      backgroundColor: "transparent",
-    },
-  }));
+
   return (
     <>
       <h1>Select your plan</h1>

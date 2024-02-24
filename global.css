@@ -163,6 +163,13 @@ label {
   justify-content: center;
 }
 
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+
 .switch-container {
   gap: 8px;
   box-sizing: border-box;
@@ -181,4 +188,21 @@ label {
 
 .selected-switch {
   color: var(--marine-blue) !important;
+}
+
+.addon-header {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.addon-desc {
+  font-size: 12px;
+  line-height: 90%;
+  color: var(--cool-gray);
+}
+
+.addon-price {
+  color: var(--purplish-blue) !important;
+  font-size: 12px;
+  margin-right: 12px;
 }

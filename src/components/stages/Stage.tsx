@@ -1,7 +1,7 @@
 import React from "react";
 
 const Stage = () => {
-  const stage: number = 2;
+  const stage: number = 3;
 
   return (
     <div className="stage-container">

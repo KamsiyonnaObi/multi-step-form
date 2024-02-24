@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Stage from "./components/stages/Stage";
 import { PersonalInfo } from "./components/personalInfo/PersonalInfo";
 import { SelectPlan } from "./components/selectPlan/SelectPlan";
+import { AddOns } from "./components/addOns/AddOns";
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
         <Paper sx={{ margin: "0 20px", borderRadius: "8px" }}>
           <section className="step-container">
             {/* <PersonalInfo /> */}
-            <SelectPlan />
+            {/* <SelectPlan /> */}
+            <AddOns />
           </section>
         </Paper>
       </section>
