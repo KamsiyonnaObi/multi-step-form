@@ -206,3 +206,12 @@ label {
   font-size: 12px;
   margin-right: 12px;
 }
+
+.confirm-container {
+  margin: 48px 0;
+  padding: 0px;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -5,6 +5,7 @@ import Stage from "./components/stages/Stage";
 import { PersonalInfo } from "./components/personalInfo/PersonalInfo";
 import { SelectPlan } from "./components/selectPlan/SelectPlan";
 import { AddOns } from "./components/addOns/AddOns";
+import { Confirm } from "./components/confirm/Confirm";
 
 const App = () => {
   return (
@@ -18,7 +19,8 @@ const App = () => {
           <section className="step-container">
             {/* <PersonalInfo /> */}
             {/* <SelectPlan /> */}
-            <AddOns />
+            {/* <AddOns /> */}
+            <Confirm />
           </section>
         </Paper>
       </section>
