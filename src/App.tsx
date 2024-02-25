@@ -4,15 +4,16 @@ import Button from "@mui/material/Button";
 import Stage from "./components/stages/Stage";
 import FormStep from "./components/FormStep";
 import { Confirm } from "./components/confirm/Confirm";
+import { useStepStore } from "./store";
 
 const App = () => {
   const [isFormComplete, setIsFormComplete] = React.useState(false);
-  const [currentStep, setCurrentStep] = React.useState(1);
+  const { currentStep, incStep, decStep } = useStepStore();
   const handleNextStep = () => {
-    setCurrentStep((prev) => prev + 1);
+    incStep();
   };
   const handlePrevStep = () => {
-    setCurrentStep((prev) => prev - 1);
+    decStep();
   };
   const handleConfirm = () => {
     setIsFormComplete(true);
