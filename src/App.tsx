@@ -6,6 +6,12 @@ import FormStep from "./components/FormStep";
 
 const App = () => {
   const [currentStep, setCurrentStep] = React.useState(1);
+  const handleNextStep = () => {
+    setCurrentStep((prev) => prev + 1);
+  };
+  const handlePrevStep = () => {
+    setCurrentStep((prev) => prev - 1);
+  };
   return (
     <>
       <div>
@@ -22,21 +28,14 @@ const App = () => {
       {/* Mobile Footer */}
       <div className="mobile-footer">
         {!(currentStep === 1) && (
-          <Button
-            variant="text"
-            onClick={() => {
-              alert("I've been clicked");
-            }}
-          >
+          <Button variant="text" onClick={handlePrevStep}>
             Go Back
           </Button>
         )}
         {currentStep != 4 && (
           <Button
             variant="contained"
-            onClick={() => {
-              alert("I've been clicked");
-            }}
+            onClick={handleNextStep}
             sx={{ marginLeft: "auto" }}
           >
             Next Step

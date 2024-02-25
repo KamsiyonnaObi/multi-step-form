@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import { PlanButton } from "../selectPlan/SelectPlan";
 import { formatPrice } from "../../../utils/utils";
+import { useSubTypeStore } from "../../store/useSubTypeStore";
 
 export const AddOns = () => {
   const [selectedAddOns, setSelectedAddOns] = useState<number[]>([1]);
-
+  const { isYearly } = useSubTypeStore();
   const handleAddOnClick = (id: number) => {
     if (selectedAddOns.includes(id)) {
       setSelectedAddOns(selectedAddOns.filter((addOnId) => addOnId !== id));
@@ -73,7 +74,7 @@ export const AddOns = () => {
                 </div>
               </div>
               <p className="zero-margin addon-price">
-                {`+${formatPrice(addOn.price)}`}
+                {`+${formatPrice(addOn.price, isYearly)}`}
               </p>
             </div>
           </PlanButton>

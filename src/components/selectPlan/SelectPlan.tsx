@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, styled } from "@mui/material";
 import Switch from "@mui/material/Switch";
 
+import { useSubTypeStore } from "../../store/useSubTypeStore";
 import { formatPrice } from "../../../utils/utils";
 
 // create reusable button
@@ -19,14 +20,16 @@ export const PlanButton = styled(Button)(() => ({
 
 export const SelectPlan = () => {
   const [selectedButton, setSelectedButton] = useState(1);
-  const [isYearly, setIsYearly] = useState(false);
+  const { isYearly, setIsYearly } = useSubTypeStore();
+
   const handleButtonClick = (buttonId: number) => {
     setSelectedButton(buttonId);
   };
 
   const onSwitchChange = () => {
-    setIsYearly((prev) => !prev);
+    setIsYearly();
   };
+
   // Data for each plan
   const plans = [
     {
@@ -94,7 +97,7 @@ export const SelectPlan = () => {
         >
           Monthly
         </p>
-        <Switch color="default" onChange={onSwitchChange} />
+        <Switch color="default" checked={isYearly} onChange={onSwitchChange} />
         <p
           className={`zero-margin switch-text ${isYearly && "selected-switch"}`}
         >
