@@ -3,44 +3,30 @@ import Checkbox from "@mui/material/Checkbox";
 import { PlanButton } from "../selectPlan/SelectPlan";
 import { formatPrice } from "../../../utils/utils";
 import { useSubTypeStore } from "../../store/useSubTypeStore";
+import { Plan, useCartStore } from "../../store/useCartStore";
+import { planAddOns } from "../../constants";
 
 export const AddOns = () => {
-  const [selectedAddOns, setSelectedAddOns] = useState<number[]>([1]);
+  const [selectedAddOns, setSelectedAddOns] = useState<number[]>([]);
   const { isYearly } = useSubTypeStore();
-  const handleAddOnClick = (id: number) => {
+  const { setAddOns } = useCartStore();
+
+  const handleAddOnClick = (id: number, newPlan: Plan) => {
+    setAddOns(newPlan);
     if (selectedAddOns.includes(id)) {
       setSelectedAddOns(selectedAddOns.filter((addOnId) => addOnId !== id));
     } else {
       setSelectedAddOns([...selectedAddOns, id]);
     }
   };
-  const addOns = [
-    {
-      id: 1,
-      name: "Online service",
-      price: 1,
-      desc: "Access to multiplayer games",
-    },
-    {
-      id: 2,
-      name: "Larger storage",
-      price: 2,
-      desc: "Extra 1TB of cloud save",
-    },
-    {
-      id: 3,
-      name: "Customizable profile",
-      price: 2,
-      desc: "Custom theme on your profile",
-    },
-  ];
+
   return (
     <>
       <h1>Pick add-ons</h1>
       <p className="grey-text">Add-ons help enhance your gaming experience.</p>
       <div className="plan-container">
         {" "}
-        {addOns.map((addOn) => (
+        {planAddOns.map((addOn) => (
           <PlanButton
             key={addOn.id}
             sx={{
@@ -53,7 +39,7 @@ export const AddOns = () => {
                 ? "var(--purplish-blue)"
                 : "",
             }}
-            onClick={() => handleAddOnClick(addOn.id)}
+            onClick={() => handleAddOnClick(addOn.id, addOn)}
           >
             <div
               style={{
@@ -66,7 +52,7 @@ export const AddOns = () => {
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Checkbox
                   checked={selectedAddOns.includes(addOn.id)}
-                  onChange={() => handleAddOnClick(addOn.id)}
+                  onChange={() => handleAddOnClick(addOn.id, addOn)}
                 />
                 <div className="flex-col-center justify-center">
                   <h3 className="zero-margin addon-header">{addOn.name}</h3>

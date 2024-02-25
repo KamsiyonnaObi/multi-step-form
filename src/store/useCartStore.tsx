@@ -1,10 +1,11 @@
 import { create } from "zustand";
 
-interface Plan {
+export interface Plan {
   id: number;
   name: string;
   price: number;
   image?: string;
+  desc?: string;
 }
 
 interface CartState {

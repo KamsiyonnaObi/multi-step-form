@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, styled } from "@mui/material";
 import Switch from "@mui/material/Switch";
-
+import { Plan } from "../../store/useCartStore";
 import { useSubTypeStore } from "../../store/useSubTypeStore";
 import { useCartStore } from "../../store/useCartStore";
 import { formatPrice } from "../../../utils/utils";
@@ -24,7 +24,7 @@ export const SelectPlan = () => {
   const { isYearly, setIsYearly } = useSubTypeStore();
   const { setPlan } = useCartStore();
 
-  const handleButtonClick = (buttonId: number, plan) => {
+  const handleButtonClick = (buttonId: number, plan: Plan) => {
     setSelectedButton(buttonId);
     setPlan(plan);
   };
