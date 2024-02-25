@@ -3,6 +3,7 @@ import { Button, styled } from "@mui/material";
 import Switch from "@mui/material/Switch";
 
 import { useSubTypeStore } from "../../store/useSubTypeStore";
+import { useCartStore } from "../../store/useCartStore";
 import { formatPrice } from "../../../utils/utils";
 
 // create reusable button
@@ -21,9 +22,11 @@ export const PlanButton = styled(Button)(() => ({
 export const SelectPlan = () => {
   const [selectedButton, setSelectedButton] = useState(1);
   const { isYearly, setIsYearly } = useSubTypeStore();
+  const { setPlan } = useCartStore();
 
-  const handleButtonClick = (buttonId: number) => {
+  const handleButtonClick = (buttonId: number, plan) => {
     setSelectedButton(buttonId);
+    setPlan(plan);
   };
 
   const onSwitchChange = () => {
@@ -33,19 +36,19 @@ export const SelectPlan = () => {
   // Data for each plan
   const plans = [
     {
-      id: 2,
+      id: 1,
       name: "Arcade",
       price: 9,
       image: "../../../assets/images/icon-arcade.svg",
     },
     {
-      id: 3,
+      id: 2,
       name: "Advanced",
       price: 12,
       image: "../../../assets/images/icon-advanced.svg",
     },
     {
-      id: 4,
+      id: 3,
       name: "Pro",
       price: 15,
       image: "../../../assets/images/icon-pro.svg",
@@ -68,7 +71,7 @@ export const SelectPlan = () => {
               borderColor:
                 selectedButton === plan.id ? "var(--purplish-blue)" : "",
             }}
-            onClick={() => handleButtonClick(plan.id)}
+            onClick={() => handleButtonClick(plan.id, plan)}
           >
             <div
               style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}
