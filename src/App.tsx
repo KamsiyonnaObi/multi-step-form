@@ -2,48 +2,58 @@ import React from "react";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import Stage from "./components/stages/Stage";
-import { PersonalInfo } from "./components/personalInfo/PersonalInfo";
-import { SelectPlan } from "./components/selectPlan/SelectPlan";
-import { AddOns } from "./components/addOns/AddOns";
-import { Confirm } from "./components/confirm/Confirm";
+import FormStep from "./components/FormStep";
 
 const App = () => {
+  const [currentStep, setCurrentStep] = React.useState(1);
   return (
     <>
       <div>
         <img src="../assets/images/bg-sidebar-mobile.svg" alt="header-image" />
       </div>
       <section className="form-container">
-        <Stage />
+        <Stage stage={currentStep} />
         <Paper sx={{ margin: "0 20px", borderRadius: "8px" }}>
           <section className="step-container">
-            {/* <PersonalInfo /> */}
-            {/* <SelectPlan /> */}
-            {/* <AddOns /> */}
-            <Confirm />
+            <FormStep currentStep={currentStep} />
           </section>
         </Paper>
       </section>
       {/* Mobile Footer */}
       <div className="mobile-footer">
-        <Button
-          variant="text"
-          onClick={() => {
-            alert("I've been clicked");
-          }}
-          sx={{ display: "none" }}
-        >
-          Go Back
-        </Button>
-        <Button
-          variant="contained"
-          onClick={() => {
-            alert("I've been clicked");
-          }}
-          sx={{ marginLeft: "auto" }}
-        >
-          Next Step
-        </Button>
+        {!(currentStep === 1) && (
+          <Button
+            variant="text"
+            onClick={() => {
+              alert("I've been clicked");
+            }}
+          >
+            Go Back
+          </Button>
+        )}
+        {currentStep != 4 && (
+          <Button
+            variant="contained"
+            onClick={() => {
+              alert("I've been clicked");
+            }}
+            sx={{ marginLeft: "auto" }}
+          >
+            Next Step
+          </Button>
+        )}
+        {currentStep === 4 && (
+          <Button
+            variant="contained"
+            size="large"
+            onClick={() => {
+              alert("I've been clicked");
+            }}
+            sx={{ backgroundColor: "var(--purplish-blue)", marginLeft: "auto" }}
+          >
+            Confirm
+          </Button>
+        )}
       </div>
     </>
   );

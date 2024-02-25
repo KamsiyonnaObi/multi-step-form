@@ -1,8 +1,6 @@
 import React from "react";
 
-const Stage = () => {
-  const stage: number = 3;
-
+const Stage = ({ stage }: { stage: number }) => {
   return (
     <div className="stage-container">
       {[1, 2, 3, 4].map((number) => (
