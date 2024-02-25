@@ -5,7 +5,7 @@ import { Plan } from "../../store/useCartStore";
 import { useSubTypeStore } from "../../store/useSubTypeStore";
 import { useCartStore } from "../../store/useCartStore";
 import { formatPrice } from "../../../utils/utils";
-
+import { plans } from "../../constants";
 // create reusable button
 export const PlanButton = styled(Button)(() => ({
   border: "1px solid var(--light-gray)",
@@ -32,28 +32,6 @@ export const SelectPlan = () => {
   const onSwitchChange = () => {
     setIsYearly();
   };
-
-  // Data for each plan
-  const plans = [
-    {
-      id: 1,
-      name: "Arcade",
-      price: 9,
-      image: "../../../assets/images/icon-arcade.svg",
-    },
-    {
-      id: 2,
-      name: "Advanced",
-      price: 12,
-      image: "../../../assets/images/icon-advanced.svg",
-    },
-    {
-      id: 3,
-      name: "Pro",
-      price: 15,
-      image: "../../../assets/images/icon-pro.svg",
-    },
-  ];
 
   return (
     <>
