@@ -215,3 +215,38 @@ label {
 .text-center {
   text-align: center;
 }
+
+.cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+}
+
+.summary-header {
+  color: var(--marine-blue);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 95%;
+}
+
+.summary-text {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--cool-gray);
+}
+.summary-addOn-price {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--marine-blue);
+}
+.total-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--purplish-blue);
+}

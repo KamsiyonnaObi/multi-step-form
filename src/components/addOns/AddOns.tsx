@@ -9,7 +9,7 @@ import { planAddOns } from "../../constants";
 export const AddOns = () => {
   const [selectedAddOns, setSelectedAddOns] = useState<number[]>([]);
   const { isYearly } = useSubTypeStore();
-  const { setAddOns } = useCartStore();
+  const { addOns, setAddOns } = useCartStore();
 
   const handleAddOnClick = (id: number, newPlan: Plan) => {
     setAddOns(newPlan);
@@ -51,7 +51,7 @@ export const AddOns = () => {
             >
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Checkbox
-                  checked={selectedAddOns.includes(addOn.id)}
+                  checked={addOns.includes(addOn)}
                   onChange={() => handleAddOnClick(addOn.id, addOn)}
                 />
                 <div className="flex-col-center justify-center">

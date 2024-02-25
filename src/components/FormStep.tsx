@@ -2,6 +2,7 @@ import React from "react";
 import { PersonalInfo } from "./personalInfo/PersonalInfo";
 import { SelectPlan } from "./selectPlan/SelectPlan";
 import { AddOns } from "./addOns/AddOns";
+import { CheckOut } from "./checkout/CheckOut";
 
 interface FormStepProps {
   currentStep: number;
@@ -15,7 +16,7 @@ const FormStep = ({ currentStep }: FormStepProps) => {
     case 3:
       return <AddOns />;
     case 4:
-      return <div>Summary</div>;
+      return <CheckOut />;
     default:
       return <PersonalInfo />;
   }
