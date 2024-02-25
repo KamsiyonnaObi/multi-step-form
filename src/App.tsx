@@ -39,7 +39,19 @@ const App = () => {
       {!isFormComplete && (
         <div className="mobile-footer">
           {!(currentStep === 1) && (
-            <Button variant="text" onClick={handlePrevStep}>
+            <Button
+              size="large"
+              variant="text"
+              onClick={handlePrevStep}
+              sx={{
+                backgroundColor: "transparent",
+                color: " var(--cool-gray)",
+                "&:hover": {
+                  color: "var(--marine-blue)",
+                  backgroundColor: "transparent",
+                },
+              }}
+            >
               Go Back
             </Button>
           )}
