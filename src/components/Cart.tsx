@@ -59,14 +59,7 @@ export const Cart = () => {
             {formatPrice(plan.price, isYearly)}
           </p>
         </div>
-        {addOns.length > 0 && (
-          <div
-            style={{
-              border: "1px solid var(--light-gray)",
-              marginBottom: "8px",
-            }}
-          ></div>
-        )}
+        {addOns.length > 0 && <div className="divider"></div>}
         {addOns.length > 0 &&
           addOns.map((addOn) => {
             return (

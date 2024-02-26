@@ -54,7 +54,7 @@ export const AddOns = () => {
                   checked={addOns.includes(addOn)}
                   onChange={() => handleAddOnClick(addOn.id, addOn)}
                 />
-                <div className="flex-col-center justify-center">
+                <div className="flex-col-center justify-center padding-top">
                   <h3 className="zero-margin addon-header">{addOn.name}</h3>
                   <p className="zero-margin addon-desc">{addOn.desc}</p>
                 </div>

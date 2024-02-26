@@ -39,7 +39,7 @@ export const SelectPlan = () => {
       <p className="grey-text">
         You have the option of monthly or yearly billing.
       </p>
-      <div className="plan-container">
+      <div className="plan-container desktop-plan-container">
         {plans.map((plan) => (
           <PlanButton
             key={plan.id}
@@ -51,9 +51,7 @@ export const SelectPlan = () => {
             }}
             onClick={() => handleButtonClick(plan.id, plan)}
           >
-            <div
-              style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}
-            >
+            <div className="test-grid">
               <img src={plan.image} alt={plan.name} />
               <div className="flex-col-center">
                 <h3 className="zero-margin">{plan.name}</h3>

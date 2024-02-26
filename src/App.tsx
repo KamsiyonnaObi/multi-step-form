@@ -31,12 +31,14 @@ const App = () => {
                 alt="header-image"
               />
             </div>
-            <div>
-              {isFormComplete ? (
-                <Confirm />
-              ) : (
-                <FormStep currentStep={currentStep} />
-              )}
+            <div className="flex-col-center">
+              <div className="desktop-form-container">
+                {isFormComplete ? (
+                  <Confirm />
+                ) : (
+                  <FormStep currentStep={currentStep} />
+                )}
+              </div>
               {/* Desktop Footer */}
               <Footer
                 isFormComplete={isFormComplete}
