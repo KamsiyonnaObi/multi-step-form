@@ -81,6 +81,10 @@ label {
   color: var(--cool-gray);
 }
 
+.desktop-header-image,
+.desktop-footer {
+  display: none;
+}
 .form-container {
   position: fixed;
   z-index: 1;
@@ -249,4 +253,30 @@ label {
   font-size: 16px;
   font-weight: 700;
   color: var(--purplish-blue);
+}
+@media screen and (min-width: 769px) {
+  .mobile-header-image,
+  .mobile-footer,
+  .stage-container {
+    display: none;
+  }
+  .desktop-header-image {
+    display: block;
+  }
+  .desktop-footer {
+    background-color: transparent;
+    margin-top: auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .form-container {
+    position: relative;
+    margin: auto;
+  }
+  .step-container {
+    display: flex;
+    gap: 80px;
+    padding: 16px;
+  }
 }
