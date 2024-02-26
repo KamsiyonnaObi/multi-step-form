@@ -225,6 +225,7 @@ label {
   align-items: center;
   justify-content: space-between;
 }
+
 .total-container {
   display: flex;
   align-items: center;
@@ -244,39 +245,105 @@ label {
   margin-bottom: 8px;
   color: var(--cool-gray);
 }
+
 .summary-addOn-price {
   font-size: 14px;
   margin-bottom: 8px;
   color: var(--marine-blue);
 }
+
 .total-price {
   font-size: 16px;
   font-weight: 700;
   color: var(--purplish-blue);
 }
+
+.test-grid {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.divider {
+  border: 1px solid var(--light-gray);
+  margin: 8px 0;
+}
+
 @media screen and (min-width: 769px) {
   .mobile-header-image,
   .mobile-footer,
   .stage-container {
     display: none;
   }
+
+  .padding-top {
+    padding: 12px 0;
+  }
   .desktop-header-image {
     display: block;
   }
+
   .desktop-footer {
+    display: flex;
+    justify-content: space-between;
     background-color: transparent;
     margin-top: auto;
     padding: 16px;
-    display: flex;
-    justify-content: space-between;
   }
+
+  .desktop-form-container {
+    align-items: center;
+    padding: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 500px;
+  }
+
+  .addon-header {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .addon-desc {
+    font-size: 14px;
+    line-height: 110%;
+  }
+
   .form-container {
     position: relative;
     margin: auto;
   }
+
+  .desktop-plan-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .test-grid {
+    align-items: flex-start;
+    gap: 48px;
+    flex-direction: column !important;
+  }
+
   .step-container {
     display: flex;
-    gap: 80px;
+    gap: 60px;
     padding: 16px;
+  }
+
+  .summary-header,
+  .summary-text,
+  .summary-addOn-price {
+    font-size: 16px;
+  }
+  .summary-text,
+  .summary-addOn-price {
+    margin-bottom: 16px;
+  }
+
+  .divider {
+    margin-top: 20px;
+    margin-bottom: 12px;
   }
 }
