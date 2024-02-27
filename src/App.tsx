@@ -20,17 +20,17 @@ const App = () => {
         />
       </div>
       <section className="form-container">
-        <Stage stage={currentStep} />
+        <Stage isMobile stage={currentStep} />
 
         <Paper sx={{ margin: "0 20px", borderRadius: "8px" }}>
           <section className="step-container">
-            <div>
+            <div className="desktop-header-image">
               <img
-                className="desktop-header-image"
                 src="../assets/images/bg-sidebar-desktop.svg"
                 alt="header-image"
               />
             </div>
+            <Stage isMobile={false} stage={currentStep} />
             <div className="flex-col-center">
               <div className="desktop-form-container">
                 {isFormComplete ? (

@@ -125,7 +125,7 @@ label {
 }
 
 .selected-stage {
-  border: none;
+  border-color: var(--light-blue);
   color: var(--marine-blue);
   background-color: var(--light-blue);
 }
@@ -263,7 +263,9 @@ label {
   gap: 12px;
   align-items: center;
 }
-
+.desktop-stage {
+  display: none;
+}
 .divider {
   border: 1px solid var(--light-gray);
   margin: 8px 0;
@@ -281,6 +283,7 @@ label {
   }
   .desktop-header-image {
     display: block;
+    position: relative;
   }
 
   .desktop-footer {
@@ -320,6 +323,18 @@ label {
     gap: 10px;
   }
 
+  .desktop-stage {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 16px;
+    z-index: 1;
+  }
+  .desktop-step {
+    display: flex;
+    gap: 12px;
+  }
   .test-grid {
     align-items: flex-start;
     gap: 48px;
@@ -332,6 +347,14 @@ label {
     padding: 16px;
   }
 
+  .step-text {
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .font-reg {
+    font-weight: 400 !important;
+  }
   .summary-header,
   .summary-text,
   .summary-addOn-price {
